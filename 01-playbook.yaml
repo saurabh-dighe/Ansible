@@ -1,1 +1,8 @@
-name: 
+name: play1
+host: all
+task:
+  - name: task 1
+    ansible.builtin.debug:
+      msg: This msg is from debug module
+
+
