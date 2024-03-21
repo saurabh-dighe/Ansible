@@ -3,6 +3,9 @@ host: all
 task:
   - name: task 1
     ansible.builtin.debug:
-      msg: This msg is from debug module
+      msg: This msg is from debug module Task1
 
 
+  - name: task 2
+    ansible.builtin.debug:
+      msg: This msg is from debug module Task 2
