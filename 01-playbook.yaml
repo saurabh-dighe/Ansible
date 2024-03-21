@@ -1,4 +1,4 @@
-    name: play1
+-   name: play1
     hosts: all
     tasks:
       - name: task 1
@@ -10,7 +10,7 @@
         ansible.builtin.debug:
           msg: This msg is from debug module Task 2
 
-    name: play2
+-   name: play2
     hosts: all
     tasks:
       - name: task 1 of play2
