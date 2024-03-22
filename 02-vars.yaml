@@ -8,17 +8,21 @@
       debug:
         msg: this is the 1st task msg
 
-    - name: task2
+    - name: task2 pronting a varible
       debug:
         msg: "Name of person runing the script is {{name}}"      
 
-    - name: task3
+    - name: task3 task level variable
       debug:
         msg: "Name of person runing the script is {{name}}"   
       vars:
         name: SD
 
-    - name: task4
+    - name: task4 undeclared variable
       debug:
         msg: "Name of person who runing the script is {{name}} and he is from {{city}} city"   
+
+    - name: task4 for commond line argument
+      debug:
+        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city and he is {{age}} yr old"         
          
