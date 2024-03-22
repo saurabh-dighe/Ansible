@@ -12,7 +12,7 @@
         msg: "Name of person runing the script is {{name}}"      
 
     - name: task3
-      vars:
-        name: SD
       debug:
         msg: "Name of person runing the script is {{name}}"   
+      vars:
+        name: SD
