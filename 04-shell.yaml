@@ -16,4 +16,4 @@
 
   - name: Task 3 to capture bash exit code 
     debug:
-      msg: Uptime of server is {{OUT.rc}}
+      msg: Exitcode of server is {{OUT.rc}}
