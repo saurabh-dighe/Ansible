@@ -1,0 +1,6 @@
+- name: Variable demo
+  hosts: inv
+  tasks:
+    - name: task1
+      debug:
+        msg: this is the 1st task msg
