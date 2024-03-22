@@ -7,6 +7,7 @@
     - name: task1
       debug:
         msg: this is the 1st task msg
+#   ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 02-vars.yaml
 
     - name: task2 pronting a varible
       debug:
@@ -24,5 +25,8 @@
 
     - name: task4 for commond line argument
       debug:
-        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city and he is {{age}} yr old"         
+        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city and he is {{age}} yr old"      
+
+#   ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e age=26 02-vars.yaml
+
          
