@@ -2,15 +2,15 @@
   hosts: all
 
   tasks:
-  - name: Task 2 for shell module
+  - name: Task 1 for shell module
     ansible.builtin.shell: uptime
     register: OUT
 
-  - name: Task 3 to print o/p of shell module
+  - name: Task 2 to print o/p of shell module
     debug:
       msg: Uptime of server is {{OUT.stdout}}
 
-  - name: Task 3 to capture bash exit code
+  - name: Task 2 to capture bash exit code
     ansible.builtin.set_fact:
       EXITCODE: "{{OUT.rc}}" 
 
