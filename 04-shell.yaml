@@ -7,5 +7,4 @@
       msg: this is task 1 of shell module
 
   - name: Task 2 for shell module
-    debug:
-      msg: this is task 1 of shell module
+    ansible.builtin.shell: uptime
