@@ -21,6 +21,6 @@
           msg: This msg is from debug module Task1
 
 
-      - name: task 2 of play
+      - name: task 2 of play2
         ansible.builtin.debug:
           msg: The distribution of this machine is {{ansible_system}}
