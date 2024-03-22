@@ -11,7 +11,7 @@
 
       - name: task 2
         ansible.builtin.debug:
-          msg: This msg is from debug module Task 2
+          msg: The distribution of this machine is {{ansible_system}}
 
 -   name: play2
     hosts: all
