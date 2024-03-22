@@ -6,6 +6,13 @@
     - name: task1
       debug:
         msg: this is the 1st task msg
+
     - name: task2
       debug:
         msg: "Name of person runing the script is {{name}}"      
+
+    - name: task3
+      vars:
+        name: SD
+      debug:
+        msg: "Name of person runing the script is {{name}}"   
