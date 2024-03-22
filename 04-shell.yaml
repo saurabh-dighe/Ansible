@@ -11,5 +11,5 @@
       msg: Uptime of server is {{OUT.stdout}}
 
   - name: Task 3 to capture bash exit code
-    ansible.builtin.sset_facts:
+    ansible.builtin.set_facts:
       EXITCODE: "{{OUT.rc}}" 
