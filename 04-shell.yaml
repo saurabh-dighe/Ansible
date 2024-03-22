@@ -10,10 +10,12 @@
     debug:
       msg: Uptime of server is {{OUT.stdout}}
 
-  - name: Task 2 to capture bash exit code
-    ansible.builtin.set_fact:
-      EXITCODE: "{{OUT.rc}}" 
+  # - name: Task 2 to capture bash exit code
+  #   ansible.builtin.set_fact:
+  #     EXITCODE: "{{OUT.rc}}" 
 
   - name: Task 3 to print bash exit code 
     debug:
       msg: Exitcode of server is {{OUT.rc}}
+
+# ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 04-shell.yaml
