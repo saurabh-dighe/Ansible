@@ -11,7 +11,8 @@
 
     - name: task2 pronting a varible
       debug:
-        msg: "Name of person runing the script is {{name}}"      
+        msg: "Name of person runing the script is {{name}}"  
+ #   git pull; ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 02-vars.yaml           
 
     - name: task3 task level variable
       debug:
