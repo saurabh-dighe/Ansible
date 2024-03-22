@@ -2,6 +2,7 @@
   hosts: all
   vars:
     name: Saurabh
+    city: Sangola
   tasks:
     - name: task1
       debug:
