@@ -25,7 +25,7 @@
 
     - name: task4 for commond line argument
       debug:
-        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city and he is {{age}} yr old"      
+        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city and his {{age}} yr old"      
 
 #   ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e age=26 02-vars.yaml
 
