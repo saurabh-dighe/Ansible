@@ -12,4 +12,4 @@
 
   - name: Task 3 to print o/p of shell module
     debug:
-      msg: Uptime of server is {{OUT}}
+      msg: Uptime of server is {{OUT.stdout}}
