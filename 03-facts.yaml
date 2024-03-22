@@ -2,6 +2,7 @@
 
 -   name: play1
     hosts: all
+    ignore_errors: true
     gather_facts: false
     tasks:
       - name: task 1 of play1
@@ -15,6 +16,7 @@
 
 -   name: play2 
     hosts: all
+    ignore_errors: true
 #    gather_facts: false
     tasks:
       - name: task 1 of play2
