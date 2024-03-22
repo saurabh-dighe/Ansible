@@ -1,6 +1,11 @@
 - name: Variable demo
   hosts: all
+  vars:
+    name: Saurabh
   tasks:
     - name: task1
       debug:
         msg: this is the 1st task msg
+    - name: task2
+      debug:
+        msg: "Name of person runing the script is {{name}}"      
