@@ -8,3 +8,8 @@
 
   - name: Task 2 for shell module
     ansible.builtin.shell: uptime
+    register: OUT
+
+  - name: Task 3 to print o/p of shell module
+    debug:
+      msg: Uptime of server is {{OUT}}
