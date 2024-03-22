@@ -1,0 +1,11 @@
+- name: Demo on shell module
+  hosts: all
+
+  tasks:
+  - name: Task 1 for shell module
+    debug:
+      msg: this is task 1 of shell module
+
+  - name: Task 2 for shell module
+    debug:
+      msg: this is task 1 of shell module
