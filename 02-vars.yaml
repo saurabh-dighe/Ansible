@@ -16,3 +16,8 @@
         msg: "Name of person runing the script is {{name}}"   
       vars:
         name: SD
+
+    - name: task4
+      debug:
+        msg: "Name of person who runing the script is {{name}} and he is from {{city}} city"   
+         
