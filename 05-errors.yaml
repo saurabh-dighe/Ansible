@@ -3,7 +3,7 @@
 
   tasks:
   - name: Check tomcat is running or not
-    ansible.builtin.shell: ps -ef | grep ansible | grep -v grep
+    ansible.builtin.shell: ps -ef | grep tomcat | grep -v grep
     register: OUT
     # ignore_errors: true
 
