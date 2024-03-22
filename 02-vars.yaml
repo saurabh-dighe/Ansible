@@ -1,5 +1,5 @@
 - name: Variable demo
-  hosts: inv
+  hosts: all
   tasks:
     - name: task1
       debug:
