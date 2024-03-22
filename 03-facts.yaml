@@ -2,6 +2,7 @@
 
 -   name: play1
     hosts: all
+    gather_facts: false
     tasks:
       - name: task 1 of play1
         ansible.builtin.debug:
@@ -14,7 +15,7 @@
 
 -   name: play2 
     hosts: all
-    gather_facts: false
+#    gather_facts: false
     tasks:
       - name: task 1 of play2
         ansible.builtin.debug:
@@ -24,3 +25,5 @@
       - name: task 2 of play2
         ansible.builtin.debug:
           msg: The distribution of this machine is {{ansible_system}}
+
+# ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 03-facts.yamlof play1
