@@ -1,4 +1,4 @@
-- name: Demo on shell module
+- name: Demo on Errors
   hosts: all
 
   tasks:
