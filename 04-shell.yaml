@@ -13,5 +13,7 @@
   - name: Task 3 to capture bash exit code
     ansible.builtin.set_fact:
       EXITCODE: "{{OUT.rc}}" 
+
+  - name: Task 3 to capture bash exit code 
     debug:
       msg: Uptime of server is {{OUT.rc}}
