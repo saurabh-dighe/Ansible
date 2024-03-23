@@ -18,6 +18,6 @@
       ansible.builtin.debug:
         msg: Action is defined 
       when: action  
-      action: false         
+        action: false         
 
 # ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 06-conditions.yaml
