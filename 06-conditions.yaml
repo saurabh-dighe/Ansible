@@ -1,7 +1,7 @@
 - name: Demo on Conditions
   hosts: all
   vars: 
-  action: true
+    action: true
 
   tasks:
     - name: task 1 Run only when OS is centos
