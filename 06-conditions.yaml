@@ -10,4 +10,4 @@
     - name: task 2 Run only when OS is Ubantu
       ansible.builtin.debug:
         msg: The distribution of this machine is {{ansible_system}}
-      when: " {{ansible_system}} == Ubantu"      
+      when: " ansible_system == Ubantu"      
