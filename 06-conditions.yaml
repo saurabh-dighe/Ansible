@@ -1,7 +1,9 @@
 - name: Demo on Conditions
   hosts: all
-  tasks:
+  vars: 
+  action: true
 
+  tasks:
     - name: task 1 Run only when OS is centos
       ansible.builtin.debug:
         msg: The distribution of this machine is {{ansible_distribution}}
@@ -10,4 +12,11 @@
     - name: task 2 Run only when OS is Ubantu
       ansible.builtin.debug:
         msg: The distribution of this machine is {{ansible_distribution}}
-      when: ansible_distribution == "Ubantu"      
+      when: ansible_distribution == "Ubantu"     
+
+    - name: task 3 Run this action
+      ansible.builtin.debug:
+        msg: Action is defined 
+      when: action           
+
+# ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 06-conditions.yaml
