@@ -5,7 +5,7 @@
     - name: task 1 Run only when OS is centos
       ansible.builtin.debug:
         msg: The distribution of this machine is {{ansible_distribution}}
-      when: ansible_system == "Centos"
+      when: ansible_system == "CentOS"
 
     - name: task 2 Run only when OS is Ubantu
       ansible.builtin.debug:
