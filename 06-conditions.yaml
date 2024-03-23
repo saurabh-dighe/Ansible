@@ -21,4 +21,9 @@
       vars:
         action: false         
 
+    - name: task 4 Run only if bar is not defined
+      ansible.builtin.debug:
+        msg: Bar is not defined 
+      when: bar is not defined          
+
 # ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 06-conditions.yaml
