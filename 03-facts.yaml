@@ -1,4 +1,7 @@
+
+
 # ansible all -i inv -e ansible_user=centos -e ansible_password=DevOps321 -m gather_facts
+# "ansible_distribution": "CentOS"
 
 -   name: play1
     hosts: all
@@ -12,7 +15,7 @@
 
       - name: task 2 of play1
         ansible.builtin.debug:
-          msg: The distribution of this machine is {{ansible_system}}
+          msg: The distribution of this machine is {{ansible_distribution}}
 
 -   name: play2 
     hosts: all
@@ -26,6 +29,6 @@
 
       - name: task 2 of play2
         ansible.builtin.debug:
-          msg: The distribution of this machine is {{ansible_system}}
+          msg: The distribution of this machine is {{ansible_distribution}}
 
 # ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 03-facts.yamlof play1
