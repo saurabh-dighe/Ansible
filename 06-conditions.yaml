@@ -17,6 +17,7 @@
     - name: task 3 Run this action
       ansible.builtin.debug:
         msg: Action is defined 
-      when: action           
+      when: action  
+      action: false         
 
 # ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 06-conditions.yaml
