@@ -5,11 +5,11 @@
   tasks:
     - name: Installing a package
       ansible.builtin.package: 
-        name: ngnix
+        name: nginx
         state: present
 
     - name: Checking a package
-      ansible.builtin.shell: type ngnix
+      ansible.builtin.shell: type nginx
       register: OUT
 
     - name: Printing a package
