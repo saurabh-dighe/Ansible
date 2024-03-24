@@ -3,7 +3,7 @@
 
   tasks:
     - name: Checking user
-      ansible.builtin.shell:
+      ansible.builtin.shell: id
       register: OUT
 
     - name: Printing users
