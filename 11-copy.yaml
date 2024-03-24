@@ -1,0 +1,9 @@
+- name: Demo on Copy a files to remote server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Copy a files
+      ansible.builtin.copy: 
+        src: sample.txt
+        destination: /home/centos
