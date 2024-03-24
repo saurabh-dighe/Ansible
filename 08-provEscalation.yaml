@@ -6,11 +6,11 @@
     - name: Checking user
       ansible.builtin.shell: id
       register: OUT
+      become_user: centos                      # become user to run perticular task as a user
 
     - name: Printing users
       ansible.builtin.debug:
         msg: User name is {{OUT.stdout}} 
-      become_user: centos                      # become user to run perticular task as a user
 
     - name: Crating roboshop user
       ansible.builtin.user:
