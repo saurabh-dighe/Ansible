@@ -16,7 +16,7 @@
         name: robot 
 
     - name: Checking user robot
-      ansible.builtin.shell: robot id
+      ansible.builtin.shell: id robot
       register: OUT
 
     - name: Printing robot user id
