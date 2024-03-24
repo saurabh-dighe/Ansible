@@ -14,4 +14,4 @@
 
     - name: Printing a package
       ansible.builtin.debug:
-        msg: "{{OUT}} installed"
+        msg: "{{OUT.stdout}} installed"
