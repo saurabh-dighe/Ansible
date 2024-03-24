@@ -3,4 +3,4 @@
     become: true
   
     tasks:
-      roles: frontend          # Name of the role to run 
+      role: frontend          # Name of the role to run 
