@@ -15,3 +15,10 @@
     - name: Printing a package
       ansible.builtin.debug:
         msg: "{{OUT.stdout}} installed"
+
+    - name: Install latest version of wget and jq
+      ansible.builtin.package: 
+        name:
+          - wget
+          - jq
+        state: latest                                           # latest checks installs latest pck
