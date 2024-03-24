@@ -6,4 +6,4 @@
     - name: Copy a files
       ansible.builtin.copy: 
         src: sample.txt
-        destination: /home/centos
+        dest: /home/centos
