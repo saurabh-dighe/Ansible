@@ -9,7 +9,8 @@
 
     - name: Printing users
       ansible.builtin.debug:
-        msg: User name is {{OUT.stdout}}   
+        msg: User name is {{OUT.stdout}} 
+      become-user: centos                      # become user to run perticular task as a user
 
     - name: Crating roboshop user
       ansible.builtin.user:
@@ -23,3 +24,4 @@
       ansible.builtin.debug:
         msg: Robot User ID is {{OUT.stdout}}              
       
+# ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 08-provEscalation.yaml
