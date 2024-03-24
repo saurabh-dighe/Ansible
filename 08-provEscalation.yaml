@@ -10,7 +10,7 @@
     - name: Printing users
       ansible.builtin.debug:
         msg: User name is {{OUT.stdout}} 
-      become-user: centos                      # become user to run perticular task as a user
+      become_user: centos                      # become user to run perticular task as a user
 
     - name: Crating roboshop user
       ansible.builtin.user:
