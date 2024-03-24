@@ -13,5 +13,13 @@
 
     - name: Crating roboshop user
       ansible.builtin.user:
-        name: robot     
+        name: robot 
+
+    - name: Checking user robot
+      ansible.builtin.shell: robot id
+      register: OUT
+
+    - name: Printing robot user id
+      ansible.builtin.debug:
+        msg: Robot User ID is {{OUT.stdout}}              
       
