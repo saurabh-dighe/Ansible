@@ -1,0 +1,16 @@
+- name: Demo on Package
+  hosts: all
+
+  tasks:
+    - name: Installing a package
+      ansible.builtin.package: 
+        name: ngnix
+        state: present
+
+    - name: Checking a package
+      ansible.builtin.shell: type ngnix
+      register: OUT
+
+    - name: Printing a package
+      ansible.builtin.debug:
+        msg: "{{OUT}} installed"
