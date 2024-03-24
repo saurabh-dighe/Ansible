@@ -2,5 +2,5 @@
     hosts: frontend
     become: true
   
-    tasks:
+    roles:
       role: frontend          # Name of the role to run 
