@@ -1,4 +1,6 @@
   - name: Install nginx
     hosts: frontend
+    become: true
+  
     tasks:
       roles: frontend          # Name of the role to run 
