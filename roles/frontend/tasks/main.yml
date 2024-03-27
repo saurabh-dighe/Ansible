@@ -29,7 +29,7 @@
   ansible.builtin.service:
     state: restarted
     name: nginx
-    daemon_reload: true
+   # daemon_reload: true
 
 - name: Changing {{COMPONENT}} hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
