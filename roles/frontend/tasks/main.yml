@@ -19,3 +19,8 @@
     src: /tmp/{{COMPONENT}}-main/static/
     dest: /usr/share/nginx/html
     remote_src: yes    
+
+- name: Copies {{COMPONENT}} proxy file
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
