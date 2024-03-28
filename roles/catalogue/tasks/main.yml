@@ -4,4 +4,8 @@
 - name: Install nodejs on remote servers
   ansible.builtin.package:
     name: nodejs
-    state: installed
+    state: present
+
+- name: Let’s create {{APPUSER}} user
+  ansible.builtin.user:
+    name: "{{APPUSER}}"
