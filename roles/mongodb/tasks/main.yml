@@ -33,4 +33,7 @@
     - catalogue
     - users
 
+- name: Changing {{COMPONENT}} hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
     
