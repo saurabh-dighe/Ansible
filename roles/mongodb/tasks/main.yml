@@ -14,7 +14,7 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Restatring {{COMPONENT}}
+- name: Restarting {{COMPONENT}}
   ansible.builtin.service:
     state: restarted
     name: mongod
@@ -28,5 +28,6 @@
 
 - name: Run a js file containing MongoDB commands with pseudo-idempotency
   community.mongodb.mongodb_shell:
+    db: my_database
     file: "/tmp/{{COMPONENT}}-main/catalogue.js"
     idempotent: yes   
