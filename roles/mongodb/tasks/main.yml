@@ -18,5 +18,5 @@
   ansible.builtin.service:
     state: restarted
     name: mongod
-    daemon_reload: true
+    enabled: yes
    
