@@ -34,6 +34,5 @@
     path: /home/{{APPUSER}}/{{COMPONENT}} 
 
 
-
 - name: Changing {{COMPONENT}} hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
