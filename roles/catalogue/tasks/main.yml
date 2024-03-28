@@ -6,6 +6,6 @@
     name: nodejs
     state: present
 
-- name: Let’s create {{APPUSER}} user
+- name: Lets create {{APPUSER}} user
   ansible.builtin.user:
     name: "{{APPUSER}}"
