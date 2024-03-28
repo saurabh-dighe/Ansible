@@ -30,7 +30,7 @@
     remote_src: yes
 
 - name: Performing {{COMPONENT}} cleanup
-  ansible.builtin.npm:
+  ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
     state: absent
 
