@@ -16,9 +16,10 @@
 
 - name: Restarting {{COMPONENT}}
   ansible.builtin.service:
-    state: restarted
+    state: started
     name: mongod
     enabled: yes
+    daemon_reload: yes
    
 - name: Download and extract {{COMPONENT}} schema
   ansible.builtin.unarchive:
