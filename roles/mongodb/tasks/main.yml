@@ -14,9 +14,9 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Resatring {{COMPONENT}}
+- name: Restatring {{COMPONENT}}
   ansible.builtin.service:
     state: restarted
-    name: mongodb
+    name: mongod
     daemon_reload: true
    
