@@ -26,8 +26,8 @@
     dest: /tmp
     remote_src: yes
 
-- name: Run a js file containing MongoDB commands with pseudo-idempotency
-  ansible.builtin.shell: mongo --host mongodb-dev.roboshop.internal < /tmp/mongodb-main.{{item}}.js
+- name: Injecting schema
+  ansible.builtin.shell: mongo --host mongodb-dev.roboshop.internal < /tmp/mongodb-main/{{item}}.js
   loop: 
     - catalouge
     - users
