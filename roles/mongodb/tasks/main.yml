@@ -17,6 +17,6 @@
 - name: Resatring {{COMPONENT}}
   ansible.builtin.service:
     state: restarted
-    name: {{COMPONENT}}
+    name: mongodb
     daemon_reload: true
    
