@@ -30,7 +30,7 @@
 - name: Injecting schema
   ansible.builtin.shell: mongo --host mongodb-dev.roboshop.internal < /tmp/mongodb-main/{{item}}.js
   loop: 
-    - catalouge
+    - catalogue
     - users
 
     
