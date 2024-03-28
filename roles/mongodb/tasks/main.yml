@@ -28,6 +28,8 @@
 
 - name: Run a js file containing MongoDB commands with pseudo-idempotency
   community.mongodb.mongodb_shell:
-    db: my_database
+    db: mongodb
     file: "/tmp/{{COMPONENT}}-main/catalogue.js"
     idempotent: yes   
+
+    
