@@ -1,0 +1,22 @@
+- name: Copying {{COMPONENT}}
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install {{COMPONENT}} on remote servers
+  ansible.builtin.package:
+    name: mongodb-org
+    state: present    
+
+- name: Enabling {{COMPONENT}} visibility
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Resatring {{COMPONENT}}
+  ansible.builtin.service:
+    state: restarted
+    name: {{COMPONENT}}
+    daemon_reload: true
+   
