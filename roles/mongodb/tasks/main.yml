@@ -27,9 +27,9 @@
     remote_src: yes
 
 - name: Run a js file containing MongoDB commands with pseudo-idempotency
-  community.mongodb.mongodb_shell:
-    db: mongodb
-    file: "/tmp/{{COMPONENT}}-main/catalogue.js"
-    idempotent: yes   
+  ansible.builtin.shell: mongo --host mongodb-dev.roboshop.internal < /tmp/mongodb-main.{{item}}.js
+  loop: 
+    - catalouge
+    - users
 
     
