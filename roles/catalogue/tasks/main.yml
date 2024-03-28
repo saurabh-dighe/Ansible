@@ -30,7 +30,7 @@
     remote_src: yes
 
 - name: Genrating Artifacts
-  community.general.npm:
+  community.general.nnpm:
     path: /home/{{APPUSER}}/{{COMPONENT}} 
 
 
