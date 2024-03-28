@@ -29,8 +29,14 @@
     group: "{{APPUSER}}"
     remote_src: yes
 
+- name: Performing {{COMPONENT}} cleanup
+  ansible.builtin.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    state: absent
 
-
+- name: Genrating Artifacts
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
 
 
 
