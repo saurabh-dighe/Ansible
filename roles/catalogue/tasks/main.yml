@@ -1,4 +1,4 @@
-- name: Disabling default nodejs version
+- name: Disabling default nodejs version and installing nodejs:18
   ansible.builtin.shell: dnf module disable nodejs -y; dnf module enable nodejs:18 -y
 
 - name: Install nodejs on remote servers
@@ -31,7 +31,7 @@
 
 - name: Generating Artifacts
   community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}/catalogue-main
+    path: /home/{{APPUSER}}/{{COMPONENT}}
 
 
 - name: Changing {{COMPONENT}} server hostname
