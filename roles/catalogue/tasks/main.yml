@@ -31,7 +31,7 @@
 
 - name: Generating Artifacts
   community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
+    path: /home/{{APPUSER}}/{{COMPONENT}}/catalogue-main
 
 
 - name: Changing {{COMPONENT}} server hostname
