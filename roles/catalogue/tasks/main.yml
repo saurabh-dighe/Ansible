@@ -29,10 +29,10 @@
     group: "{{APPUSER}}"
     remote_src: yes
 
-- name: Genrating Artifacts
+- name: Generating Artifacts
   community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}-main
+    path: /home/{{APPUSER}}/{{COMPONENT}}
 
 
-- name: Changing {{COMPONENT}} hostname
+- name: Changing {{COMPONENT}} server hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
