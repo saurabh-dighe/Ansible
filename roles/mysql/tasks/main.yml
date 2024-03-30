@@ -1,0 +1,32 @@
+- name: Disable Default repo and configure {{COMPONENT}} 5.7 repo
+  ansible.builtin.shell: dnf module disable mysql -y 
+
+- name: Copying {{COMPONENT}}
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: Install {{COMPONENT}}
+  ansible.builtin.package:
+    name: mysql-community-server -y
+    state: present 
+
+
+- name: Download and extract {{COMPONENT}}
+  ansible.builtin.unarchive:
+    src: https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
+    dest: /tmp
+    remote_src: yes
+
+- name: Starting {{COMPONENT}}
+  ansible.builtin.service:
+    state: started
+    name: mysqld
+    enabled: yes
+   # daemon_reload: yes
+
+
+
+
+
+
