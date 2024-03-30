@@ -11,13 +11,6 @@
     name: mysql-community-server -y
     state: present 
 
-
-- name: Download and extract {{COMPONENT}}
-  ansible.builtin.unarchive:
-    src: https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
-    dest: /tmp
-    remote_src: yes
-
 - name: Starting {{COMPONENT}}
   ansible.builtin.service:
     state: started
