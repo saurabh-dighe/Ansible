@@ -1,4 +1,4 @@
-- name: Configuring {{COMPONENT}}  repo file
+- name: Configuring {{COMPONENT}} repo file
   ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
 - name: Enabling {{COMPONENT}} 6.2 version
@@ -15,7 +15,7 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Enabling {{COMPONENT}} visibility
+- name: Enabling {{COMPONENT}} visibility 2
   ansible.builtin.replace:
     path: /etc/redis/redis.conf
     regexp: '127.0.0.1'
