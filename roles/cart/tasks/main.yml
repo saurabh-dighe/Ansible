@@ -43,7 +43,7 @@
     state: restarted
     name: "{{COMPONENT}}"
     enabled: yes
-    #daemon_reload: true
+    daemon_reload: true
 
 
 - name: Changing {{COMPONENT}} server hostname
