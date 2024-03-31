@@ -1,7 +1,7 @@
 - name: Installing {{CONPONENT}} erlang
   ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh |bash
 
-- name: Configuring {{CONPONENT}} repo
+- name: Configuring {{CONPONENT}} repo 
   ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh |bash
 
 - name: Install {{COMPONENT}} on remote servers
