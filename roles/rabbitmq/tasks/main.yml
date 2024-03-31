@@ -1,0 +1,34 @@
+- name: Installing {{CONPONENT}} erlang
+  ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
+- name: Configuring {{CONPONENT}} repo
+  ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+
+- name: Install {{COMPONENT}} on remote servers
+  ansible.builtin.dnf:
+    name: rabbitmq-server
+    state: present   
+    
+- name: Restarting {{COMPONENT}}
+  ansible.builtin.service:
+    state: started
+    name: rabbitmq-server
+    enabled: yes
+    #daemon_reload: yes     
+
+- name: create {{APPUSER}} user for {{COMPONENT}}
+    Add user to server and assign full access control on / vhost.
+    The user might have permission rules for other vhost but you don't care.
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: roboshop123
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present 
+
+- name: Changing {{COMPONENT}} hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+    
