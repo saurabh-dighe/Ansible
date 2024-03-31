@@ -18,6 +18,10 @@
     enabled: yes
    # daemon_reload: yes
 
+- name: Extracting password from {{COMPONENT}} server
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: default_pass
 
 
 
