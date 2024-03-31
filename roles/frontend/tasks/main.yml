@@ -25,12 +25,12 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Restaring {{COMPONENT}}
+- name: Restarting {{COMPONENT}}
   ansible.builtin.service:
     state: restarted
     name: nginx
     enabled: true
-    #daemon_reload: true
+    demon_reload: true
 
 - name: Changing {{COMPONENT}} hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
