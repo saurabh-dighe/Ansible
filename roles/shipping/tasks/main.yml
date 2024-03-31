@@ -28,7 +28,7 @@
 
 - name: Generating Artifacts
   ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
-  agrs:
+  args:
     chdir: /home/{{APPUSER}}/{{COMPONENT}}
 
 - name: Copying systemd file
