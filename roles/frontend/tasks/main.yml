@@ -29,7 +29,7 @@
   ansible.builtin.service:
     state: restarted
     name: nginx
-    enabled: true
+    enabled: yes
     daemon_reload: yes
 
 - name: Changing {{COMPONENT}} hostname
