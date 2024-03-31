@@ -17,8 +17,6 @@
     #daemon_reload: yes     
 
 - name: create {{APPUSER}} user for {{COMPONENT}}
-    Add user to server and assign full access control on / vhost.
-    The user might have permission rules for other vhost but you don't care.
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
