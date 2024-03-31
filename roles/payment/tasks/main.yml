@@ -33,7 +33,7 @@
   ansible.builtin.pip:
     requirements: /home/roboshop/payment.requirements.txt
     executable: pip3.6
-    extra_args: --roboshop
+    extra_args: --user
 
 - name: Copying systemd file
   ansible.builtin.template:
