@@ -1,0 +1,31 @@
+- name: Disabling default nodejs version and installing nodejs:18
+  ansible.builtin.shell: dnf module disable nodejs -y; dnf module enable nodejs:18 -y
+
+- name: Install nodejs on remote servers
+  ansible.builtin.package:
+    name: nodejs
+    state: presentroles/catalogue/tasks/main.yml
+
+- name: Creating {{APPUSER}} user account
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create_user
+
+- name: Dealing Artifacts
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_extract
+
+- name: Generating Artifacts
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+
+- name: Configuring service for {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: configure_service
+
+- name: Set Host-name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_hostname
