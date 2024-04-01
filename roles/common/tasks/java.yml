@@ -1,0 +1,34 @@
+- name: Install maven on remote servers
+  ansible.builtin.dnf:
+    name: maven
+    state: present
+
+- name: Creating {{APPUSER}} user account
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create_user
+
+- name: Dealing Artifacts
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_extracts
+
+- name: Generating Artifacts
+  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+  args:
+    chdir: /home/{{APPUSER}}/{{COMPONENT}}
+
+- name: Configuring service for {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: configure_service
+
+- name: Set Host-name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_hostname
+
+
+
+
+
