@@ -4,7 +4,7 @@
 - name: Install nodejs on remote servers
   ansible.builtin.package:
     name: nodejs
-    state: presentroles/catalogue/tasks/main.yml
+    state: present
 
 - name: Creating {{APPUSER}} user account
   ansible.builtin.include_role:
