@@ -14,7 +14,7 @@
 - name: Dealing Artifacts
   ansible.builtin.include_role:
     name: common
-    tasks_from: download_extract
+    tasks_from: download_extracts
 
 - name: Generating Artifacts
   community.general.npm:
