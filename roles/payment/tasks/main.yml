@@ -1,52 +1,5 @@
-- name: Install python on remote servers
-  ansible.builtin.package:
-    name: 
-      - python36 
-      - gcc 
-      - python3-devel
-    state: present
+- name: Configuring {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: python
 
-- name: Lets create {{APPUSER}} user
-  ansible.builtin.user:
-    name: "{{APPUSER}}"
-
-- name: Download and extract {{COMPONENT}} repo
-  ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip
-    dest: /tmp
-    remote_src: yes
-
-- name: Performing {{COMPONENT}} cleanup
-  ansible.builtin.file:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
-    state: absent
-
-- name: Copying {{COMPONENT}}
-  ansible.builtin.copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: /home/{{APPUSER}}/{{COMPONENT}}
-    owner: "{{APPUSER}}"
-    group: "{{APPUSER}}"
-    remote_src: yes
-
-- name: Generating Artifacts
-  ansible.builtin.pip:
-    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
-    executable: pip3.6
-
-- name: Copying systemd file
-  ansible.builtin.template:
-    src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
-
-- name: Restarting {{COMPONENT}}
-  ansible.builtin.service:
-    state: restarted
-    name: "{{COMPONENT}}"
-    enabled: yes
-    #daemon_reload: true
-
-- name: Changing {{COMPONENT}} server hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
-
-  

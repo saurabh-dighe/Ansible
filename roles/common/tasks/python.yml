@@ -1,0 +1,32 @@
+- name: Install python on remote servers
+  ansible.builtin.package:
+    name: 
+      - python36 
+      - gcc 
+      - python3-devel
+    state: present
+
+- name: Creating {{APPUSER}} user account
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create_user
+
+- name: Dealing Artifacts
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_extracts
+
+- name: Generating Artifacts
+  ansible.builtin.pip:
+    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
+    executable: pip3.6
+    
+- name: Configuring service for {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: configure_service
+
+- name: Set Host-name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_hostname
