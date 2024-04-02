@@ -1,4 +1,4 @@
-# Ansible
+# Ansible Updated Readme
 
 1) Ansible is openSource 
 2) This is 100% Agentless
@@ -22,7 +22,6 @@ To ansible, we need to supply the list of Servres that needs to be managed by AN
 
     Inventory File 
     Destination Server Username & Password
-
 
 ### Ansible is all about modules 
 ansible all -i inv -e ansible_user=centos -e ansible_password=DevOps321 -m shell -a uptime
@@ -64,8 +63,6 @@ Ansible expected the playbooks to have .yaml or yml as extensions
 
     ```$ ansible-playbook -i inv -e ansible_user=centos -e ansible_password=aasa11122xzs pbName.yaml```
 
-
-
 # Roles In Ansible 
 
     Roles let you automatically load related vars, files, tasks, handlers, and other Ansible artifacts based on a known file structure. After you group your content into roles, you can easily reuse them and share them with other users.
@@ -91,13 +88,9 @@ Ansible expected the playbooks to have .yaml or yml as extensions
             meta/             #
                 main.yml      #  <-- role dependencies
 
-
-
 # Ensure you have 
 * sudo dnf install mysql-devel -y
 * sudo pip3 install mysqlclient
-
-
 
 # When to use PUSH and PULL Mechanisms ?
 
