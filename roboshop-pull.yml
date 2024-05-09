@@ -1,0 +1,9 @@
+  - name: Configuring Roboshop Project
+    hosts: localhost
+    become: true
+  
+    roles:
+      -  role: "{{COMPONENT}}"         # Name of the role to run  
+
+
+  # asible-pull -U  https://github.com/saurabh-dighe/Ansible.git -e ENV=dev -e COMPONENT=frontend roboshop-pull.yml 
