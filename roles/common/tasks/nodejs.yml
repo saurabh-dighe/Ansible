@@ -13,7 +13,7 @@
 
 - name: Download and extract {{COMPONENT}}
   ansible.builtin.get_url:
-    src: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+    url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
     dest: /home/{{APPUSER}}/global-bundle.pem
   become_user: "{{APPUSER}}"
 
