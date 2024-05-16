@@ -11,6 +11,12 @@
     name: common
     tasks_from: create_user
 
+- name: Download and extract {{COMPONENT}}
+  ansible.builtin.get_url:
+    src: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+    dest: /home/{{APPUSER}}/global-bundle.pem
+  become_user: "{{APPUSER}}"
+
 - name: Dealing Artifacts
   ansible.builtin.include_role:
     name: common
