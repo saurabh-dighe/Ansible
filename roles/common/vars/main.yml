@@ -1,0 +1,1 @@
+SECRETS: lookup('amazon.aws.secretsmanager_secret', 'roboshop/secrets', on_missing='skip') 
