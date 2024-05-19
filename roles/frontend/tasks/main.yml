@@ -23,7 +23,7 @@
 
 - name: Copying {{COMPONENT}}
   ansible.builtin.copy:
-    src: /tmp/{{COMPONENT}}/static/
+    src: /tmp/
     dest: /usr/share/nginx/html
     remote_src: yes    
 
