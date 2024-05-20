@@ -8,24 +8,24 @@
     path: /usr/share/nginx/html/*
     state: absent
 
-# Uncomment this if you want to use the artifacts from Github
-# - name: Download and extract {{COMPONENT}}
-#   ansible.builtin.unarchive:
-#     src: https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip
-#     dest: /tmp
-#     remote_src: yes
-
-# - name: Copying {{COMPONENT}}
-#   ansible.builtin.copy:
-#     src: /tmp/frontend-main/static/
-#     dest: /usr/share/nginx/html
-#     remote_src: yes 
-
-- name: Download and extract {{COMPONENT}} from Nexus
+#Uncomment this if you want to use the artifacts from Github
+- name: Download and extract {{COMPONENT}}
   ansible.builtin.unarchive:
-    src: http://172.31.4.200:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-    dest: /usr/share/nginx/html
+    src: https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip
+    dest: /tmp
     remote_src: yes
+
+- name: Copying {{COMPONENT}}
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html
+    remote_src: yes 
+
+# - name: Download and extract {{COMPONENT}} from Nexus
+#   ansible.builtin.unarchive:
+#     src: http://172.31.4.200:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+#     dest: /usr/share/nginx/html
+#     remote_src: yes
 
 - name: Copies {{COMPONENT}} proxy file
   ansible.builtin.template:
