@@ -14,15 +14,15 @@
 #     name: common
 #     tasks_from: download_extracts
 
-- name: Downloading Artifacts From Nexus
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: download_extracts_nexus
-
 # - name: Generating Artifacts
 #   ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
 #   args:
 #     chdir: /home/{{APPUSER}}/{{COMPONENT}}
+
+- name: Downloading Artifacts From Nexus
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_extracts_nexus
 
 - name: Configuring service for {{COMPONENT}}
   ansible.builtin.include_role:
