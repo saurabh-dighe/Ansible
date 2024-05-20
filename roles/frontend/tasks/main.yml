@@ -36,13 +36,13 @@
   ansible.builtin.template:
     src: nginx.conf                
     dest: /etc/nginx/nginx.conf 
-- name: Restarting {{COMPONENT}}
 
+- name: Restarting {{COMPONENT}}
   ansible.builtin.service:
     state: restarted
     name: nginx
     enabled: yes
-    daemon_reload: yes
+    #daemon_reload: yes
 
 - name: Changing {{COMPONENT}} hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
