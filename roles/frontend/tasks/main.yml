@@ -42,7 +42,7 @@
     state: restarted
     name: nginx
     enabled: yes
-    #daemon_reload: yes
+    daemon_reload: yes
 
 - name: Changing {{COMPONENT}} hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
