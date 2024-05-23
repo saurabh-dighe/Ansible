@@ -1,4 +1,4 @@
-- name: Copying the rsyslog file
+- name: Copying the RSYSLOG file
   ansible.builtin.template:
     src: rsyslog.conf
     dest: /etc/rsyslog.d/rsyslog.conf
