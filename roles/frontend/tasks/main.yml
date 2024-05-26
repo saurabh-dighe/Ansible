@@ -24,7 +24,7 @@
 # Uncomment this if you want to use the artifacts from Nexus
 # - name: Download and extract {{COMPONENT}} from Nexus
 #   ansible.builtin.unarchive:
-#     src: http://172.31.4.200:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+#     src: http://172.31.27.216:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
 #     dest: /usr/share/nginx/html
 #     remote_src: yes
 
