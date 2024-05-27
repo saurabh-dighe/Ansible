@@ -43,7 +43,7 @@
     state: restarted
     name: nginx
     enabled: yes
-    #daemon_reload: yes
+    daemon_reload: yes
 
 - name: Configuring rsyslog
   ansible.builtin.include_role:
