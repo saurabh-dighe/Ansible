@@ -38,6 +38,8 @@ scrape_configs:
     ec2_sd_configs:
       - region: us-east-1  # Replace with your AWS region
         port: 9100
-        # filters:
-        #   - name: tag:role
-        #     values: monitored
+        filters:
+          - name: tag:monitor
+            values:
+              - 'yes'
+              - 'true'
