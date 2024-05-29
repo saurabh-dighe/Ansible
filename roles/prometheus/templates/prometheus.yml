@@ -43,11 +43,11 @@ scrape_configs:
               - 'yes'
               - 'true'             
     relabel_configs:
-    - source_labels: [__meta_ec2_tag_Name] 
-      target_label: Instance_Name
+      - source_labels: [__meta_ec2_tag_Name] 
+        target_label: Instance_Name
 
-    - source_labels: [__meta_ec2_private_ip] 
-      target_label: Private_IP
+      - source_labels: [__meta_ec2_private_ip] 
+        target_label: Private_IP
 
-    - source_labels: [__meta_ec2_instance_id]
-      target_label: Instance_Id
+      - source_labels: [__meta_ec2_instance_id]
+        target_label: Instance_Id
