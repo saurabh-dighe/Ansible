@@ -34,7 +34,6 @@ scrape_configs:
       - targets: ["172.31.40.103:9100"]
 
   - job_name: 'ec2_nodes'
-
     ec2_sd_configs:
       - region: us-east-1  # Replace with your AWS region
         port: 9100
@@ -42,4 +41,13 @@ scrape_configs:
           - name: tag:monitor
             values:
               - 'yes'
-              - 'true'
+              - 'true'             
+    relabel_configs:
+      - source_labels: [__meta_ec2_tag_Name] 
+        target_label: Instance Name
+
+      - source_labels: [__meta_ec2_private_ip] 
+        target_label: Private IP
+
+      - source_labels: [__meta_ec2_instance_id]
+        target_label: Instance Id
