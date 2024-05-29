@@ -32,3 +32,12 @@ scrape_configs:
 
     static_configs:
       - targets: ["172.31.40.103:9100"]
+
+  - job_name: 'ec2_nodes'
+
+    ec2_sd_configs:
+      - region: us-east-1  # Replace with your AWS region
+        port: 9100
+        # filters:
+        #   - name: tag:role
+        #     values: monitored
