@@ -1,0 +1,2 @@
+- name: Installing filebeat
+  ansible.builtin.shell: curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/node-exporter/install.sh | bash
