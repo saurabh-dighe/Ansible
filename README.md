@@ -107,4 +107,12 @@ Ansible expected the playbooks to have .yaml or yml as extensions
                 3) As of today, ansible-pull can only fetch the code from GIT based repositories only
 
 
-    
+<!-- Prometheus CPU utilization -->
+ceil (100 - (avg by(Instance_Name)(rate(node_cpu_seconds_total{mode="idle"}[5m]) * 100)))
+
+<!-- Prometheus Memory utilization -->
+ceil(((node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes ) * 100 )
+
+
+========================================================================================================
+-e ansible_python_interpreter=/home/centos/.local/bin:/home/centos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
